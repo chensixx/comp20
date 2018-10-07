@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Rick Roll</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+<h1 id="title">Rick Roll</h1>
+
+<video src="https://www.cs.tufts.edu/comp/20/rickroll.mp4" id="rickroll" controls></video>
+<div id="lyrics"></div>
+
+<script>
+
+	var v = document.getElementById("rickroll");
+	var l = document.getElementById("lyrics");
+	v.addEventListener("timeupdate", function() { myfunc(v.currentTime); }, true); 
+function myfunc(time)
+	{
+		if (time < 18)
+			l.innerHTML = "Music~"
+		if(time > 18 && time < 35)
+			l.innerHTML = "We're no strangers to love<br/> You know the rules and so do I. <br/>A full commitment's what I'm thinking of <br/> You wouldn't get this from any other guy"
+		if((time > 35 && time < 43)||(time > 153 && time < 161))
+			l.innerHTML = "I just wanna tell you how I'm feeling<br/>Gotta make you understand"
+		if((time > 43 && time <61) || (time > 85 && time < 119)|| time > 161)
+			l.innerHTML = "Never gonna give you up<br/> Never gonna let you down<br/> Never gonna run around and desert you<br/> Never gonna make you cry<br/> Never gonna say goodbye<br/> Never gonna tell a lie and hurt you"
+		if((time >61 &&time <77)||(time > 137 && time < 153))
+			l.innerHTML="We've known each other for so long<br/>Your heart's been aching, but<br/>You're too shy to say it<br/>Inside, we both know what's been going on<br/>We know the game and we're gonna play it"
+		if(time >77 &&time <85)
+			l.innerHTML = "And if you ask me how I'm feeling<br/>Don't tell me you're too blind to see"
+		
+		if(time >119 &&time <137)
+			l.innerHTML ="(Ooh, give you up)<br/>(Ooh, give you up)<br/>Never gonna give, never gonna give<br/>(Give you up)<br/>Never gonna give, never gonna give<br/>(Give you up)"
+
+	}
+	
+	
+</script>
+</body>
+</html>	
